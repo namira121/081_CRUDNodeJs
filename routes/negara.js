@@ -1,18 +1,31 @@
-import express, {Router} from "express";
+import express, { Router } from "express";
 
 const router = express.Router();
 
 const negara = [
     {
-        merk: "Porche",
-        model: "Sport",
-        warna: "Hitam",
-        tahun: 2024,
+        nama: "Indonesia",
+        benua: "Asia",
+        penduduk: "banyak sekali",
+        umur: 78,
+        Bahasa: "bahasa Indonesia",
     },
     {
-        merk: "BMW",
-        model: "Sport",
-        warna: "Putih",
-        tahun:2020,
+        nama: "Brunei",
+        benua: "Asia",
+        penduduk: "sedikit sekali",
+        umur: 50,
+        bahasa: "bahasa Melayu",
+    },
+    {
+        nama: "Inggris",
+        benua: "Eropa",
+        penduduk: "Lumayan",
+        umur: 1000,
+        bahasa: "bahasa Inggris",
     },
 ];
+router.get("/", (req, res) => {
+    res.send(negara);
+});
+export default router;

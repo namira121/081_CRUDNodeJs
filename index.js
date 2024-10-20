@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import mobilRoute from "./routes/mobil.js";
+import negaraRoute from "./routes/negara.js";
 
 const app = express();
 const PORT = 8000;
@@ -8,6 +9,7 @@ const PORT = 8000;
 app.use(bodyParser.json());
 
 app.use("/mobil", mobilRoute);
+app.use("/negara", negaraRoute);
 app.get("/", (req, res) => { // request dan respon
     console.log(["GET ROUTE"]);
     res.send("Met Pagi")
